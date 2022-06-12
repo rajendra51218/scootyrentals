@@ -48,10 +48,11 @@ public class ScootyRentalServiceImpl implements ScootyRentalService {
                 System.out.println("Task performed on: " + new Date());
                 scooties.forEach(scooty -> {
                     if(scooty.getSootyStatus().equals(ScootyStatus.RESERVED.name())) {
+                        scooty.setTimer(scooty.getTimer() + 1000);
                         if(scooty.getTimer() == scootytime) {
                             scooty.setSootyStatus(ScootyStatus.AVAILABLE.name());
+                            scooty.setTimer(0);
                         }
-                        scooty.setTimer(scooty.getTimer() + 1000);
                     }
                 });
             }
