@@ -14,7 +14,7 @@ public class ScootyRentalServiceImpl implements ScootyRentalService {
     List<Outlet> oulets;
     List<Scooty> scooties;
 
-    // scooty block 6 secs after booking
+    // scooty block 6 secs after reserved
     int scootytime = 6000;
 
     @PostConstruct
