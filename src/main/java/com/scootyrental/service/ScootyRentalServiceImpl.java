@@ -51,7 +51,7 @@ public class ScootyRentalServiceImpl implements ScootyRentalService {
                         if(scooty.getTimer() == scootytime) {
                             scooty.setSootyStatus(ScootyStatus.AVAILABLE.name());
                         }
-                        scooty.setTimer(scooty.getTimer() + 1);
+                        scooty.setTimer(scooty.getTimer() + 1000);
                     }
                 });
             }
