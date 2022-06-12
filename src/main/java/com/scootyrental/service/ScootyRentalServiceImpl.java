@@ -14,6 +14,7 @@ public class ScootyRentalServiceImpl implements ScootyRentalService {
     List<Outlet> oulets;
     List<Scooty> scooties;
 
+    // scooty block 6 secs after booking
     int scootytime = 6000;
 
     @PostConstruct
@@ -44,8 +45,7 @@ public class ScootyRentalServiceImpl implements ScootyRentalService {
     public void runTimer() {
         TimerTask task = new TimerTask() {
             public void run() {
-                System.out.println("Task performed on: " + new Date() + "n" +
-                        "Thread's name: " + Thread.currentThread().getName());
+                System.out.println("Task performed on: " + new Date());
                 scooties.forEach(scooty -> {
                     if(scooty.getSootyStatus().equals(ScootyStatus.RESERVED.name())) {
                         if(scooty.getTimer() == scootytime) {
